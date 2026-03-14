@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medora - Booking Confirmed | Desktop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f0f4fa, #e6ecf5);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .confirmation-container {
+      max-width: 900px;
+      width: 100%;
+      background: white;
+      border-radius: 40px;
+      box-shadow: 0 30px 60px rgba(0,60,120,0.25);
+      overflow: hidden;
+    }
+
+    .success-header {
+      background: linear-gradient(145deg, #2a9d8f, #1f7a6e);
+      padding: 50px;
+      text-align: center;
+      color: white;
+    }
+
+    .success-icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+      animation: popIn 0.5s ease;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0); }
+      80% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .success-header h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .success-header p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    .confirmation-content {
+      padding: 50px;
+    }
+
+    .confirmation-card {
+      background: #f8fafd;
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 40px;
+      border: 1px solid #e0e8f5;
+    }
+
+    .booking-id {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .booking-id-label {
+      color: #6b7b8e;
+      font-size: 14px;
+    }
+
+    .booking-id-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: #2a9d8f;
+      letter-spacing: 2px;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .detail-item {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .detail-icon {
+      width: 60px;
+      height: 60px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2a9d8f;
+      font-size: 24px;
+      box-shadow: 0 5px 15px rgba(42,157,143,0.1);
+    }
+
+    .detail-text h4 {
+      color: #264653;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .detail-text p {
+      color: #2a9d8f;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .ai-badge-large {
+      background: #e8f4f2;
+      color: #2a9d8f;
+      padding: 8px 20px;
+      border-radius: 40px;
+      display: inline-block;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .btn-primary {
+      background: #2a9d8f;
+      color: white;
+      border: none;
+      padding: 18px 40px;
+      border-radius: 16px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary:hover {
+      background: #238b7e;
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px rgba(42,157,143,0.3);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #2a9d8f;
+      border: 2px solid #2a9d8f;
+      padding: 18px 40px;
+      border-radius: 16px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-secondary:hover {
+      background: #f0f9f7;
+    }
+
+    .add-calendar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #2a9d8f;
+      margin: 30px 0;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .footer-links a {
+      color: #6b7b8e;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: #2a9d8f;
+    }
+  </style>
+</head>
+<body>
+  <div class="confirmation-container">
+    <div class="success-header">
+      <div class="success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h1>Appointment Confirmed!</h1>
+      <p>Your booking has been successfully scheduled</p>
+    </div>
+
+    <div class="confirmation-content">
+      <div class="confirmation-card">
+        <div class="booking-id">
+          <div class="booking-id-label">Booking Reference</div>
+          <div class="booking-id-value">#MD-2345-6789</div>
+        </div>
+
+        <div class="details-grid">
+          <div class="detail-item">
+            <div class="detail-icon"><i class="fas fa-user-md"></i></div>
+            <div class="detail-text">
+              <h4>Doctor</h4>
+              <p>Dr. Naveen Hasranga</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon"><i class="fas fa-stethoscope"></i></div>
+            <div class="detail-text">
+              <h4>Specialty</h4>
+              <p>Cardiology</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon"><i class="fas fa-hospital"></i></div>
+            <div class="detail-text">
+              <h4>Hospital</h4>
+              <p>City Hospital, Colombo 07</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon"><i class="fas fa-calendar-alt"></i></div>
+            <div class="detail-text">
+              <h4>Date</h4>
+              <p>Monday, March 15, 2026</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon"><i class="fas fa-clock"></i></div>
+            <div class="detail-text">
+              <h4>Time</h4>
+              <p>2:30 PM</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-icon"><i class="fas fa-robot"></i></div>
+            <div class="detail-text">
+              <h4>AI Recommendation</h4>
+              <p>Optimal time - 45% less wait</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <span class="ai-badge-large"><i class="fas fa-robot"></i> AI Smart Selection: Best time based on hospital traffic</span>
+        </div>
+      </div>
+
+      <!-- Add to Calendar -->
+      <div class="add-calendar">
+        <i class="fas fa-calendar-plus"></i>
+        <span>Add this appointment to your calendar</span>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <a href="home.html" class="btn-primary">
+          <i class="fas fa-home"></i> Return to Dashboard
+        </a>
+        <a href="booking.html" class="btn-secondary">
+          <i class="fas fa-calendar-alt"></i> View Details
+        </a>
+      </div>
+
+      <!-- Additional Info -->
+      <div style="background: #f8fafd; border-radius: 16px; padding: 20px; margin-top: 40px;">
+        <div style="display: flex; gap: 20px; justify-content: space-around;">
+          <div><i class="fas fa-envelope" style="color:#2a9d8f;"></i> Confirmation sent to Dilshan@example.com</div>
+          <div><i class="fas fa-shield-alt" style="color:#2a9d8f;"></i> Free cancellation up to 2 hours before</div>
+          <div><i class="fas fa-clock" style="color:#2a9d8f;"></i> Please arrive 15 minutes early</div>
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="footer-links">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="#"><i class="fas fa-print"></i> Print</a>
+        <a href="#"><i class="fas fa-share-alt"></i> Share</a>
+        <a href="#"><i class="fas fa-download"></i> Download</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
