@@ -70,7 +70,7 @@ This project specifically addresses issues identified in Sri Lanka's e-channelli
 
 | Dashboard | AI Booking |
 |-----------|------------|
-| ![Dashboard](screenshots/dashboard.png) | ![AI Booking](screenshots/Booking.png) |
+| ![Dashboard](screenshots/Dashboard.png) | ![AI Booking](screenshots/Booking.png) |
 
 | Doctor Search | Confirmation |
 |---------------|--------------|
