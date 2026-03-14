@@ -70,11 +70,11 @@ This project specifically addresses issues identified in Sri Lanka's e-channelli
 
 | Dashboard | AI Booking |
 |-----------|------------|
-| ![Dashboard](screenshots/dashboard.png) | ![AI Booking](screenshots/booking-ai.png) |
+| ![Dashboard](screenshots/dashboard.png) | ![AI Booking](screenshots/Booking.png) |
 
 | Doctor Search | Confirmation |
 |---------------|--------------|
-| ![Search](screenshots/search-doctors.png) | ![Confirmation](screenshots/confirmation.png) |
+| ![Search](screenshots/Search.png) | ![Confirmation](screenshots/confirmation.png) |
 
 ## 🚀 Getting Started
 
@@ -103,9 +103,14 @@ open index.html
 
 👥 Contributors
 
-    Dilshan Wijayawardhan - UI/UX Designer & Frontend Developer
+    Dilshan Wijayawardhan - Frontend Developer 
+    Kavidu Prabash        - UI/UX Designer
 
-    Group Project Team Members
+    Group Project Team Members  - Ruvidu Nuraj
+                                - Nicol Perea
+                                - pujani Botheju
+                                - Malmi Manora
+                                - Senumi Dinoda
 
 📄 License
 
